@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-md="6" size-lg="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Iniciar Sesión</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>  
+            <ion-item>
+              <ion-input type="email" placeholder="Ingrese correo" label="Correo" labelPlacement="floating"
+                  helperText="Ingrese un correo valido"
+                  errorText="Formato de correo erroneo"
+                  ngModel email>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" placeholder="Ingrese Contraseña" label="Contraseña" labelPlacement="floating"
+                  helperText="Ingrese su Contraseña"
+                  errorText="Contraseña erronea"
+                  ngModel email>
+              </ion-input>
+            </ion-item>
+            <ion-button [routerLink]="['/home']" expand="full">Ingresar</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Volver al Menú</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>
