@@ -1,0 +1,87 @@
+<ion-menu contentId="menu-content" menuId="menu-content" side="end" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Opciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-item routerLink="/tres">
+      <ion-icon name="log-in" slot="start"></ion-icon>
+      <ion-label>Cerrar Sesión</ion-label>
+    </ion-item>
+
+
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-menu-toggle slot="end">
+        <ion-button>
+          Minimizar
+          <ion-icon slot="end" name="arrow-undo-outline"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-toolbar>
+  </ion-footer>
+</ion-menu>
+
+<div class="ion-page" id="menu-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>RegistrAPP</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="centered">Bienvenido a RegistrAPP</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <img class="centered-img" 
+             src="https://cdn.discordapp.com/attachments/902029824409870389/1282918379866296441/image.png?ex=66e11a59&is=66dfc8d9&hm=6761fe061301d43a2f89932e0cceff7470bc8cbaa5ca8abb10850c5a22b78e0c&"
+             alt="Educación en Continuidad" />
+        <br>
+        <img src="https://www.duoc.cl/wp-content/uploads/2020/06/valparaiso_IMG_0313_1920.jpg" 
+             alt="Foto sede" />
+
+        <ion-button expand="full" (click)="toggleFunctionality()">Mostrar/Ocultar Funcionalidades</ion-button>
+
+        <ion-list *ngIf="showFunctionality">
+          <ion-list-header>
+            <ion-label>Funcionalidades:</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-icon name="qr-code-outline" slot="start"></ion-icon>
+            <ion-label>Registro de asistencia mediante código QR</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="camera-outline" slot="start"></ion-icon>
+            <ion-label>Lectura del código QR con la cámara del dispositivo</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+            <ion-label>Registro automático con fecha y hora</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>¿Cómo funciona?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>1. El docente ingresa al sistema web y genera un código QR para la asistencia.</p>
+        <p>2. El código QR se proyecta en el aula.</p>
+        <p>3. Los alumnos abren la aplicación en su dispositivo móvil.</p>
+        <p>4. La aplicación usa la cámara para leer el código QR.</p>
+        <p>5. La asistencia se registra automáticamente con la fecha y hora.</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</div>
