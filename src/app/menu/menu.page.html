@@ -5,27 +5,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    
-    <ion-list-header color="primary">
-      <ion-label>Menú de app</ion-label>
-    </ion-list-header>
+  <div class="menu-container">
+    <ion-list>
+      <ion-list-header color="primary">
+        <ion-label>Menú de app</ion-label>
+      </ion-list-header>
 
-    <ion-item>
-      <ion-button [routerLink]="['/tres']">Iniciar Sesión</ion-button>
-    </ion-item>
-    
-    <ion-item>
-      <ion-button [routerLink]="['/dos']">Restablecer Contraseña</ion-button>
-    </ion-item>
+      <ion-item>
+        <ion-button [routerLink]="['/tres']">Iniciar Sesión</ion-button>
+      </ion-item>
 
-    <br><br><br>
+      <ion-item>
+        <ion-button [routerLink]="['/dos']">Restablecer Contraseña</ion-button>
+      </ion-item>
 
-    <ion-item *ngIf="isMobile">
-    <ion-button (click)="downloadAPK()">Descargar APK</ion-button>
-    </ion-item>
-    
-
-  </ion-list>
+      <ion-item *ngIf="isMobile">
+        <ion-button (click)="downloadAPK()">Descargar APK</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
-
