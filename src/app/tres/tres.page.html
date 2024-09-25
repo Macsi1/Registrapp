@@ -1,3 +1,9 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <ion-grid>
     <ion-row class="ion-justify-content-center">
@@ -9,32 +15,29 @@
           <ion-card-content>  
             <ion-item>
               <ion-input type="email" placeholder="Ingrese correo" label="Correo" labelPlacement="floating"
-                  helperText="Ingrese un correo valido"
-                  errorText="Formato de correo erroneo"
-                  ngModel email>
+                  helperText="Ingrese un correo válido" [(ngModel)]="email">
               </ion-input>
             </ion-item>
             <ion-item>
               <ion-input type="password" placeholder="Ingrese Contraseña" label="Contraseña" labelPlacement="floating"
-                  helperText="Ingrese su Contraseña"
-                  errorText="Contraseña erronea"
-                  ngModel email>
+                  helperText="Ingrese su Contraseña" [(ngModel)]="password">
               </ion-input>
             </ion-item>
-            <ion-button [routerLink]="['/home']" expand="full">Ingresar</ion-button>
+            <ion-button expand="full" (click)="login()">Ingresar</ion-button>
+            <!-- Mensaje de error -->
+            <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
     <ion-title>Volver al Menú</ion-title>
-
     <ion-buttons slot="start">
       <ion-back-button defaultHref="menu"></ion-back-button>
     </ion-buttons>
-
   </ion-toolbar>
 </ion-footer>
