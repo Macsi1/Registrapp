@@ -7,21 +7,31 @@
             <ion-card-title>Iniciar Sesión</ion-card-title>
           </ion-card-header>
           <ion-card-content>  
-            <ion-item>
-              <ion-input type="email" placeholder="Ingrese correo" label="Correo" labelPlacement="floating"
-                  helperText="Ingrese un correo valido"
-                  errorText="Formato de correo erroneo"
-                  ngModel email>
-              </ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="password" placeholder="Ingrese Contraseña" label="Contraseña" labelPlacement="floating"
-                  helperText="Ingrese su Contraseña"
-                  errorText="Contraseña erronea"
-                  ngModel email>
-              </ion-input>
-            </ion-item>
-            <ion-button [routerLink]="['/home']" expand="full">Ingresar</ion-button>
+            <form (ngSubmit)="login()" #loginForm="ngForm">
+              <ion-item>
+                <ion-input type="email" 
+                    [(ngModel)]="email"
+                    name="email"
+                    placeholder="Ingrese correo" 
+                    label="Correo" 
+                    labelPlacement="floating"
+                    helperText="Ingrese un correo valido"
+                    errorText="Formato de correo erroneo">
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="password" 
+                    [(ngModel)]="password"
+                    name="password"
+                    placeholder="Ingrese Contraseña" 
+                    label="Contraseña" 
+                    labelPlacement="floating"
+                    helperText="Ingrese su Contraseña"
+                    errorText="Contraseña erronea">
+                </ion-input>
+              </ion-item>
+              <ion-button type="submit" expand="full">Ingresar</ion-button>
+            </form>
           </ion-card-content>
         </ion-card>
       </ion-col>

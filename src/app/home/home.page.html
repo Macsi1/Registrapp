@@ -12,11 +12,22 @@
     <ion-card-content>
       <!-- Imagen centrada -->
       <img class="centered-img" 
-           src="https://cdn.discordapp.com/attachments/902029824409870389/1282918379866296441/image.png?ex=66e11a59&is=66dfc8d9&hm=6761fe061301d43a2f89932e0cceff7470bc8cbaa5ca8abb10850c5a22b78e0c&"
+           src="https://t3.ftcdn.net/jpg/03/68/95/08/360_F_368950850_aMW6C9P5SV7udFGHWgz97fvgNVsnOvpp.jpg"
            alt="Educación en Continuidad" />
            <br>
       <img src="https://www.duoc.cl/wp-content/uploads/2020/06/valparaiso_IMG_0313_1920.jpg" 
            alt="Foto sede" />
+
+      <!-- Contenedor de la galería de imágenes -->
+      <div class="image-gallery">
+        <div class="image-container" *ngFor="let image of images">
+          <img [src]="image.url" 
+               [alt]="image.alt" 
+               class="gallery-img"
+               (click)="navigateToPage(image.alt)"
+               style="cursor: pointer">
+        </div>
+      </div>
 
       <!-- Botón para desplegar funcionalidades -->
       <ion-button expand="full" (click)="toggleFunctionality()">
@@ -49,11 +60,8 @@
       <ion-card-title>¿Cómo funciona?</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>1. El docente ingresa al sistema web y genera un código QR para la asistencia.</p>
-      <p>2. El código QR se proyecta en el aula.</p>
-      <p>3. Los alumnos abren la aplicación en su dispositivo móvil.</p>
-      <p>4. La aplicación usa la cámara para leer el código QR.</p>
-      <p>5. La asistencia se registra automáticamente con la fecha y hora.</p>
+       
+      
     </ion-card-content>
   </ion-card>
 </ion-content>

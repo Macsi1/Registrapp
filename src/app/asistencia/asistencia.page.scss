@@ -1,0 +1,65 @@
+.duoc-background {
+  --background: #050505;
+}
+
+.duoc-card {
+  --background: #494949;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.duoc-title {
+  color: #000000;
+  font-weight: bold;
+}
+
+.duoc-text {
+  color: #000000;
+}
+
+.estadisticas-container {
+  padding: 10px;
+}
+
+.estadistica-item {
+  margin: 10px 0;
+}
+
+.estadisticas-container {
+  padding: 16px;
+  
+  ion-card {
+    margin-bottom: 16px;
+  }
+}
+
+.estadistica-item {
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #cc6302;
+}
+
+ion-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+ion-label {
+  display: block;
+  color: #363636;
+}
+
+// Colores según el porcentaje de asistencia
+ion-card-content {
+  .estadistica-item:first-child {
+    background-color: var(--ion-color-success-light);
+    &.warning {
+      background-color: var(--ion-color-warning-light);
+    }
+    &.danger {
+      background-color: var(--ion-color-danger-light);
+    }
+  }
+}

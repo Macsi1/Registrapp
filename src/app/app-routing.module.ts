@@ -23,6 +23,31 @@ const routes: Routes = [
   {
     path: 'tres',
     loadChildren: () => import('./tres/tres.module').then( m => m.TresPageModule)
+  },
+
+  {
+    path: 'mate',
+    loadChildren: () => import('./mate/mate.module').then( m => m.MatePageModule)
+  },
+  {
+    path: 'lengua',
+    loadChildren: () => import('./lengua/lengua.module').then( m => m.LenguaPageModule)
+  },
+  {
+    path: 'historia',
+    loadChildren: () => import('./historia/historia.module').then( m => m.HistoriaPageModule)
+  },
+  {
+    path: 'ciencia',
+    loadChildren: () => import('./ciencia/ciencia.module').then( m => m.CienciaPageModule)
+  },
+  {
+    path: 'ingles',
+    loadChildren: () => import('./ingles/ingles.module').then( m => m.InglesPageModule)
+  },
+  {
+    path: 'asistencia',
+    loadChildren: () => import('./asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
   }
   
 
