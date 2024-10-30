@@ -14,21 +14,30 @@ export class TresPage implements OnInit {
   errorMessage: string = '';
 
   // Correo y contraseña permitidos
-  validEmail: string = 'usuariopriviligiado@registrapp.cl';
+  validEmail: string = 'invitado@gmail.com';
   validPassword: string = '12345678';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {}
 
   // Función de inicio de sesión
-  login() {
+  async login() {
     if (this.email === this.validEmail && this.password === this.validPassword) {
       // Redirigir a la página de inicio si las credenciales son correctas
       this.router.navigate(['/home']);
     } else {
-      // Mostrar mensaje de error si las credenciales no coinciden
-      this.errorMessage = 'Correo o contraseña incorrectos. Inténtelo de nuevo.';
+      await this.mostrarAlertaError();
     }
+  }
+
+  async mostrarAlertaError() {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: 'Credenciales inválidas. Por favor, verifique su correo y contraseña.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }

@@ -32,7 +32,7 @@ export class InglesPage implements OnInit {
     const fin = new Date(this.mesActual.getFullYear(), this.mesActual.getMonth() + 1, 0);
 
     // Definimos los días que NO asistió (faltas)
-    const diasFalta = [7, 10, 11, 22]; // Ejemplo: faltó los días 4, 11, 18 y 25 del mes
+    const diasFalta = [7, 10, 11]; // Ejemplo: faltó los días 4, 11, 18 y 25 del mes
 
     for (let d = new Date(inicio); d <= fin; d.setDate(d.getDate() + 1)) {
       if (d.getDay() >= 1 && d.getDay() <= 5) { // Solo días laborables

@@ -1,24 +1,24 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="duoc">
+  <ion-toolbar>
     <ion-title>Resumen de Asistencias</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding duoc-background">
+<ion-content [fullscreen]="true">
   <div class="estadisticas-container">
-    <ion-card *ngFor="let materia of materias" class="duoc-card">
+    <ion-card *ngFor="let materia of materias">
       <ion-card-header>
-        <ion-card-title class="duoc-title">{{ materia.nombre }}</ion-card-title>
+        <ion-card-title>{{ materia.nombre }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <div class="estadistica-item">
-          <ion-label class="duoc-text">Porcentaje de asistencia: {{ materia.estadisticas.porcentaje }}%</ion-label>
+          <ion-label>Porcentaje de asistencia: {{ materia.estadisticas.porcentaje }}%</ion-label>
         </div>
         <div class="estadistica-item">
-          <ion-label class="duoc-text">Clases asistidas: {{ materia.estadisticas.asistidos }}</ion-label>
+          <ion-label>Clases asistidas: {{ materia.estadisticas.asistidos }}</ion-label>
         </div>
         <div class="estadistica-item">
-          <ion-label class="duoc-text">Faltas: {{ materia.estadisticas.faltas }}</ion-label>
+          <ion-label>Faltas: {{ materia.estadisticas.faltas }}</ion-label>
         </div>
       </ion-card-content>
     </ion-card>

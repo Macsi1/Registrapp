@@ -19,7 +19,7 @@ export class AsistenciaService {
     },
     ingles: {
       nombre: 'Inglés',
-      diasFalta: [7, 10, 11, 22]
+      diasFalta: [7, 10, 11]
     },
     historia: {
       nombre: 'Historia',
