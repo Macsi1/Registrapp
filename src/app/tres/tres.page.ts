@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -7,25 +7,28 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './tres.page.html',
   styleUrls: ['./tres.page.scss'],
 })
-export class TresPage {
+
+export class TresPage implements OnInit {
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
 
-  constructor(
-    private router: Router,
-    private alertController: AlertController
-  ) {}
+  // Correo y contraseña permitidos
+  validEmail: string = 'usuariopriviligiado@registrapp.cl';
+  validPassword: string = '12345678';
 
-  async login() {
-    if (this.email === 'invitado@gmail.com' && this.password === '12345678') {
+  constructor(private router: Router) { }
+
+  ngOnInit() {}
+
+  // Función de inicio de sesión
+  login() {
+    if (this.email === this.validEmail && this.password === this.validPassword) {
+      // Redirigir a la página de inicio si las credenciales son correctas
       this.router.navigate(['/home']);
     } else {
-      const alert = await this.alertController.create({
-        header: 'Error',
-        message: 'Correo o contraseña incorrectos',
-        buttons: ['OK']
-      });
-      await alert.present();
+      // Mostrar mensaje de error si las credenciales no coinciden
+      this.errorMessage = 'Correo o contraseña incorrectos. Inténtelo de nuevo.';
     }
   }
 }

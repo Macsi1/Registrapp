@@ -4,6 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
+<<<<<<< HEAD
 <ion-content [fullscreen]="true" class="ion-padding">
   <div class="ion-text-center">
     <h2 class="ion-padding">Menú de app</h2>
@@ -31,6 +32,26 @@
         Descargar APK
       </ion-button>
     </div>
+=======
+<ion-content [fullscreen]="true">
+  <div class="menu-container">
+    <ion-list>
+      <ion-list-header color="primary">
+        <ion-label>Menú de app</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-button [routerLink]="['/tres']">Iniciar Sesión</ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-button [routerLink]="['/dos']">Restablecer Contraseña</ion-button>
+      </ion-item>
+
+      <ion-item *ngIf="isMobile">
+        <ion-button (click)="downloadAPK()">Descargar APK</ion-button>
+      </ion-item>
+    </ion-list>
+>>>>>>> addda68f25b343c04380675154568138f478aed0
   </div>
 </ion-content>
-
